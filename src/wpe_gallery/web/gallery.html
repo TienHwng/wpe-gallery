@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WE Gallery ($count)</title>
+    <style>
+      $styles
+    </style>
+  </head>
+  <body class="safe">
+    <section id="stage" aria-label="Duyệt từng wallpaper" hidden>
+      <div class="amb"><img id="a0" alt="" /><img id="a1" alt="" /></div>
+      <div class="bar"><i id="bar"></i></div>
+      <header>
+        <div id="count" role="status"></div>
+        <div class="nav">
+          <button class="btn" id="toAtlas" type="button">Bản đồ màu<kbd>A</kbd></button
+          ><button class="btn" id="toWall" type="button">Lưới<kbd>G</kbd></button>
+        </div>
+      </header>
+      <div class="play">
+        <div class="deck">
+          <img class="p2" id="p2" alt="" /><img class="p1" id="p1" alt="" /><img
+            id="hero"
+            alt=""
+            draggable="false"
+          />
+        </div>
+        <div class="info">
+          <p id="num"></p>
+          <h1 id="title" tabindex="-1" aria-live="polite"></h1>
+          <p id="meta"></p>
+          <ul id="tags"></ul>
+          <div class="act">
+            <button class="btn primary" id="keep" type="button">Giữ<kbd>→</kbd></button
+            ><button class="btn" id="skip" type="button">Bỏ qua<kbd>←</kbd></button>
+          </div>
+          <div class="minor">
+            <button class="link" id="undo" type="button">Hoàn tác<kbd>Z</kbd></button
+            ><a class="link" id="steam" target="_blank" rel="noopener">Mở trên Steam<kbd>O</kbd></a
+            ><button class="link" id="reveal" type="button" hidden></button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div id="shelf"></div>
+        <div id="total"></div>
+        <button class="btn" id="toDone" type="button">Tổng kết<kbd>F</kbd></button>
+      </footer>
+    </section>
+    <section id="wall" aria-label="Lưới wallpaper" hidden>
+      <header>
+        <b id="wc" tabindex="-1"></b><span class="spacer"></span
+        ><label class="order"
+          >Sắp xếp
+          <select id="order">
+            <option value="list">Thứ tự danh sách</option>
+            <option value="subs">Nhiều người đăng ký nhất</option>
+            <option value="big">Dung lượng lớn nhất</option>
+            <option value="small">Dung lượng nhỏ nhất</option>
+            <option value="new">Mới nhất</option>
+          </select></label
+        ><button class="btn primary" id="sort" type="button"></button
+        ><button class="btn" id="toAtlas2" type="button">Bản đồ màu</button
+        ><button class="btn" id="toDone2" type="button">Tổng kết</button>
+        <div id="wallFilters">
+          <div id="filters">
+            <input id="q" aria-label="Lọc wallpaper" placeholder="Lọc theo tên, tag hoặc id" />
+            <div id="chips"></div>
+            <button class="chip" id="clearFilters" type="button" hidden>Xóa lọc</button>
+            <button class="chip" id="mature" type="button" hidden></button>
+          </div>
+        </div>
+      </header>
+      <main>$cards</main>
+      <div id="none" hidden>Không có wallpaper nào khớp bộ lọc.</div>
+    </section>
+    <section id="done" aria-label="Tổng kết" hidden>
+      <div class="sum">
+        <h2 id="doneH" tabindex="-1"></h2>
+        <p id="doneP"></p>
+        <button class="btn primary" id="next" type="button"></button
+        ><button class="btn" id="save" type="button">Lưu link thành file .txt</button>
+        <div class="row">
+          <button class="link" id="exportP" type="button">Xuất tiến độ</button
+          ><button class="link" id="importP" type="button">Nạp tiến độ</button
+          ><input id="importFile" type="file" accept=".json,application/json" hidden />
+        </div>
+        <div class="row">
+          <button class="link" id="back" type="button">Về lưới</button
+          ><button class="link" id="toAtlas3" type="button">Bản đồ màu</button
+          ><button class="link" id="reset" type="button">Làm lại từ đầu</button>
+        </div>
+      </div>
+      <div id="mosaic"></div>
+    </section>
+    <section id="atlas" aria-label="Bản đồ màu" hidden>
+      <header>
+        <div>
+          <h2 id="atlasH" tabindex="-1"></h2>
+          <p>
+            Bấm một ô để xem các ảnh cùng tông trước, hoặc kéo qua một vùng để chọn theo cảm hứng.
+          </p>
+        </div>
+        <div class="nav">
+          <button class="btn primary" id="atlasSort" type="button"></button
+          ><button class="btn" id="atlasWall" type="button">Lưới<kbd>G</kbd></button
+          ><button class="btn" id="atlasDone" type="button">Tổng kết<kbd>F</kbd></button>
+        </div>
+      </header>
+      <div id="atlasFilters"></div>
+      <div id="field"></div>
+      <div id="brushbar" hidden>
+        <span id="brushN"></span>
+        <button class="btn primary" id="brushSort" type="button"></button
+        ><button class="btn" id="brushClear" type="button">Bỏ chọn<kbd>Esc</kbd></button>
+      </div>
+      <div id="peek" hidden>
+        <img alt="" />
+        <b></b>
+        <span></span>
+      </div>
+    </section>
+    <div id="toast" role="status" hidden></div>
+    <script>
+      $script
+    </script>
+  </body>
+</html>

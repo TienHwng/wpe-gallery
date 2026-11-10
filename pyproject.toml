@@ -1,0 +1,31 @@
+[project]
+name = "wpe-gallery"
+version = "0.1.0"
+description = "Bulk-preview Wallpaper Engine workshop links as an HTML gallery"
+readme = "README.md"
+authors = [
+    { name = "Claude", email = "noreply@anthropic.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+wpe-gallery = "wpe_gallery.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # the formatter handles line length; long HTML strings stay on one line
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.4",
+]
